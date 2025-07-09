@@ -17,10 +17,9 @@
     <div class="col-md-7 p-5 bg-dark text-white d-flex flex-column">
       <h2 class="mb-4 fw-bold">Todo List</h2>
       <ul class="list-group list-group-flush overflow-auto flex-grow-1" style="max-height: 400px;">
-        <!-- <li *ngFor="let todo of todos" class="list-group-item d-flex align-items-center bg-secondary text-white mb-2 rounded">
-          <input type="checkbox" class="form-check-input me-3" [(ngModel)]="todo.completed">
-          <span [class.completed]="todo.completed" class="flex-grow-1">{{ todo.title }}</span>
-        </li> -->
+        @for (todo of todos(); track todo.id) {
+          <app-todo-item [todo]="todo"></app-todo-item>
+        }
       </ul>
     </div>
 
